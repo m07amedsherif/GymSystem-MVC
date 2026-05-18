@@ -1,8 +1,9 @@
-﻿using GymSystem.Configurations;
-using GymSystem.Models;
+﻿using GymSystem.DAL.Configurations;
+using GymSystem.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace GymSystem.Contexts
+
+namespace GymSystem.DAL.Contexts
 {
     public class GymDbContext : DbContext
     {

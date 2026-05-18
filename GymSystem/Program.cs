@@ -1,3 +1,6 @@
+using GymSystem.DAL.Repositries.Classes;
+using GymSystem.DAL.Repositries.Interfaces;
+
 namespace GymSystem
 {
     public class Program
@@ -8,6 +11,8 @@ namespace GymSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<GymSystem.DAL.Contexts.GymDbContext>();
+            builder.Services.AddScoped<IPlanRepositry, PlanRepositry>();
 
             var app = builder.Build();
 
