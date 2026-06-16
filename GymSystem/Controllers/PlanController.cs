@@ -1,22 +1,21 @@
-﻿using GymSystem.DAL.Contexts;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using GymSystem.DAL.Entities;
 using GymSystem.DAL.Repositries.Interfaces;
-using GymSystem.DAL.Repositries.Classes;
 
 namespace GymSystem.Controllers
 {
     public class PlanController : Controller
     {
-        private IPlanRepositry planRepositry;
+        private readonly IGenericRepositry<Plan> planRepositry;
 
-        public PlanController(IPlanRepositry _planRepositry)
+        public PlanController(IGenericRepositry<Plan> _planRepositry)
         {
             this.planRepositry = _planRepositry;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(CancellationToken token)
         {
-            var plans = await planRepositry.GetAll();
+            var plans = await planRepositry.GetAll(false, token);
             return View(plans);
         }
 

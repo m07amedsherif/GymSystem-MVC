@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymSystem.DAL.Repositries.Interfaces
 {
-    public interface IPlanRepositry:IGenericRepositry<Plan>
+    public interface IMemberRepositry:IGenericRepositry<Member>
     {
         //new features
     }
