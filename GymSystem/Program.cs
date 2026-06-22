@@ -1,3 +1,5 @@
+using GymSystem.BLL.Services.Classes;
+using GymSystem.BLL.Services.Interfaces;
 using GymSystem.DAL.Contexts;
 using GymSystem.DAL.Repositries.Classes;
 using GymSystem.DAL.Repositries.Interfaces;
@@ -17,7 +19,9 @@ namespace GymSystem
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
-            builder.Services.AddScoped(typeof(IGenericRepositry<>), typeof(GenericRepositry<>));
+            //builder.Services.AddScoped(typeof(IGenericRepositry<>), typeof(GenericRepositry<>));
+            builder.Services.AddScoped<IMemberServices, MemberServices>();
+            builder.Services.AddScoped<IUnitOfWork,  UnitOfWork>();
 
             var app = builder.Build();
 

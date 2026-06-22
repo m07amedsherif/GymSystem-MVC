@@ -17,7 +17,6 @@ namespace GymSystem.DAL.Configurations
                    .HasForeignKey<HealthRecord>(M => M.MemberId);
 
             base.Configure(builder);
-
         }
     }
 }

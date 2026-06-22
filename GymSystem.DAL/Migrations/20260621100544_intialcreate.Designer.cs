@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymSystem.DAL.Migrations
 {
     [DbContext(typeof(GymDbContext))]
-    [Migration("20260606192307_AllMedules")]
-    partial class AllMedules
+    [Migration("20260621100544_intialcreate")]
+    partial class intialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -176,9 +176,6 @@ namespace GymSystem.DAL.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("JoinDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -208,9 +205,6 @@ namespace GymSystem.DAL.Migrations
                             t.HasCheckConstraint("GymUser_EmailCheck", "Email LIKE '_%@_%._%'");
 
                             t.HasCheckConstraint("GymUser_PhoneCheck", "[Phone] LIKE '010%' OR [Phone] LIKE '011%' OR [Phone] LIKE '012%' OR [Phone] LIKE '015%'");
-
-                            t.Property("JoinDate")
-                                .HasColumnName("JoinDate1");
                         });
                 });
 

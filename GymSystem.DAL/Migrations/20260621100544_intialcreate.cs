@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GymSystem.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class AllMedules : Migration
+    public partial class intialcreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,7 +35,6 @@ namespace GymSystem.DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    JoinDate1 = table.Column<DateTime>(type: "datetime2", nullable: false),
                     JoinDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),

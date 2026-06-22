@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <!-- ^ Our main css file -->
     <link rel="stylesheet" href="~/css/style.css" />
-    <title>Power fitness | Home</title>
+    <title>Power fitness | @ViewData["Title"]</title>
 </head>
 <body>
     <header>
@@ -31,7 +31,6 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto mb-2 mb-lg-0 mt-3 mt-lg-0">
-                        <li class="nav-item">
                         <li class="nav-item">
                             <a class="nav-link active px-3 py-2 mx-2 fw-bolder fs-5" aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -141,6 +140,10 @@
             </div>
         </div>
     </footer>
-
+    
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

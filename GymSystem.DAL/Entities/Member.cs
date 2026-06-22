@@ -7,8 +7,6 @@
 
         public string? Photo { get; set; }   // optional profile picture
 
-        public DateTime JoinDate { get; set; }   // auto-set on insert
-
         // Navigation: 1-to-1 with HealthRecord
         public HealthRecord? HealthRecord { get; set; }
 
